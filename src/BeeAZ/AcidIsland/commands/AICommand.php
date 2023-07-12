@@ -103,7 +103,7 @@ class AICommand extends Command implements PluginOwned {
 				case "top":
 					return $this->top->onCommand($player);
 					break;
-				case "getitem"
+				case "getitem":
 				        return $this->getitem->onCommand($player);
 			                break;
 			}
