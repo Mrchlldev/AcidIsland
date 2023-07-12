@@ -111,22 +111,4 @@ class EventListener implements Listener {
 			}
 		}
 	}
-	public function onDamage(EntityDamageByEntityEvent $ev) {
-		$entity = $ev->getEntity();
-		$damager = $ev->getDamager();
-		if ($entity instanceof Player && $damager instanceof Player) {
-			$world = $entity->getWorld()->getDisplayName();
-			$name = strtolower($damager->getName());
-			$ai = AcidIsland::getInstance();
-			$ex = explode("-", $world);
-			if ($ex[0] == "ai") {
-				if ($ex[1] !== $name) {
-					if ($ai->getIsland($ex[1])->get("pvp") === false) {
-						$damager->sendMessage("☞ §a§l[AcidIsland] §cYou do not have permission to pvp here");
-						$ev->cancel();
-					}
-				}
-			}
-		}
-	}
 }
