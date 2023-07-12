@@ -72,7 +72,6 @@ class AcidIsland extends PluginBase implements Listener {
 		$name = strtolower($player->getName());
 		$this->setData($name, "member", $name);
 		$this->setData($name, "lock", false);
-		$this->setData($name, "pvp", false);
 		foreach ($this->cfg->get("start-item") as $start) {
 			$item = explode(":", $start);
 			$player->getInventory()->addItem(LegacyStringToItemParser::getInstance()->parse((int) $item[0].':'.(int) $item[1])->setCount((int) $item[2]));
