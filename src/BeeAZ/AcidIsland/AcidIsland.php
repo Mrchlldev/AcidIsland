@@ -72,13 +72,14 @@ class AcidIsland extends PluginBase implements Listener {
 		$name = strtolower($player->getName());
 		$this->setData($name, "member", $name);
 		$this->setData($name, "lock", false);
+	}
+
+	public function getItem(Player $player) {
 		foreach ($this->cfg->get("start-item") as $start) {
 			$item = explode(":", $start);
 			$player->getInventory()->addItem(LegacyStringToItemParser::getInstance()->parse((int) $item[0].':'.(int) $item[1])->setCount((int) $item[2]));
 		}
 	}
-
-	public function getItem(Player $player) {
 
 	public function playSound($player, string $sound, float $volume = 0, float $pitch = 0) : void {
 		$packet = new PlaySoundPacket();
