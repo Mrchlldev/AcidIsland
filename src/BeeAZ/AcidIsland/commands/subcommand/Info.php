@@ -25,22 +25,10 @@ class Info {
 		$ai = AcidIsland::getInstance();
 		if ($ai->isIsland($name)) {
 			$member = $ai->getIsland($name)->get("member");
-			$pvp = $this->getPVP($name);
 			$lock = $this->getLock($name);
-			$player->sendMessage(str_replace(["{member}", "{pvp}", "{lock}"], [$member, $pvp, $lock], $ai->cfg->get("ISLAND-INFO")));
+			$player->sendMessage(str_replace(["{member}", "{lock}"], [$member, $lock], $ai->cfg->get("ISLAND-INFO")));
 		} else {
 			$player->sendMessage($ai->cfg->get("ISLAND-NOTFOUND"));
-		}
-	}
-
-	public function getPVP($name) {
-		$ai = AcidIsland::getInstance();
-		$pvp = $ai->getIsland($name)->get("pvp");
-		if ($pvp === true) {
-			return "on";
-		}
-		if ($pvp === false) {
-			return "off";
 		}
 	}
 
