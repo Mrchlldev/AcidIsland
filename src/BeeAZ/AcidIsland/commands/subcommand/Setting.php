@@ -25,16 +25,6 @@ class Setting {
 		$name = strtolower($player->getName());
 		if ($ai->isIsland($name)) {
 			switch ($data) {
-				case "pvp":
-					$name = strtolower($player->getName());
-					$ai->setData($name, "pvp", true);
-					$player->sendMessage($ai->cfg->get("PVP"));
-					break;
-				case "nopvp":
-					$name = strtolower($player->getName());
-					$ai->setData($name, "pvp", false);
-					$player->sendMessage($ai->cfg->get("NOPVP"));
-					break;
 				case "lock":
 					$name = strtolower($player->getName());
 					$ai->setData($name, "lock", true);
