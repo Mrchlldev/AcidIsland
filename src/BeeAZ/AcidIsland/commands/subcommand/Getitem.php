@@ -10,7 +10,7 @@ use pocketmine\command\CommandSender;
 class Getitem {
 
 	public function onCommand(CommandSender $player) {
-		AcidIsland::getInstance()->getItem($player));
-    $player->sendMessage("§aSuccesfully get item");
+		AcidIsland::getInstance()->getItem($player);
+                $player->sendMessage("§aSuccesfully get item");
 	}
 }
