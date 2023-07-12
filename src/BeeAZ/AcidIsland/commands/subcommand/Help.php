@@ -13,6 +13,7 @@ class Help {
 		$player->sendMessage("§a/ac join : §fTo Your Island");
 		$player->sendMessage("§a/ac add <name> : §fAdd Friends Into the Island");
 		$player->sendMessage("§a/ac tp <name> : §fTo Someone Else's Island");
+		$player->sendMessage("§a/ac getitem : §fTo Get Item For Your Island");
 		$player->sendMessage("§a/ac delete or /ac delete <name> (op) : §fClear the island");
 		$player->sendMessage("§a/ac kick <name> : §f Kick Player Is In Your Island");
 		$player->sendMessage("§a/ac remove <name> : §fRemove Player From Friend List");
