@@ -78,6 +78,8 @@ class AcidIsland extends PluginBase implements Listener {
 		}
 	}
 
+	public function getItem(Player $player) {
+
 	public function playSound($player, string $sound, float $volume = 0, float $pitch = 0) : void {
 		$packet = new PlaySoundPacket();
 		$packet->soundName = $sound;
