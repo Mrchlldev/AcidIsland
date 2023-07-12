@@ -16,6 +16,7 @@ use BeeAZ\AcidIsland\commands\subcommand\Remove;
 use BeeAZ\AcidIsland\commands\subcommand\Setting;
 use BeeAZ\AcidIsland\commands\subcommand\Teleport;
 use BeeAZ\AcidIsland\commands\subcommand\Top;
+use BeeAZ\AcidIsland\commands\subcommand\Getitem;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginOwned;
@@ -59,6 +60,7 @@ class AICommand extends Command implements PluginOwned {
 		$this->delete = new Delete();
 		$this->about = new About();
 		$this->top = new Top();
+		$this->getItem = new Getitem();
                 $this->setPermission("acidisland.default");
 	}
 
@@ -101,6 +103,9 @@ class AICommand extends Command implements PluginOwned {
 				case "top":
 					return $this->top->onCommand($player);
 					break;
+				case "getitem"
+				        return $this->getitem->onCommand($player);
+			                break;
 			}
 		} else {
 			$this->help->onCommand($player);
